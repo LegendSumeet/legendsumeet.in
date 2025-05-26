@@ -18,16 +18,19 @@ import { HiCalendar, HiChat } from "react-icons/hi";
 import { sanityFetch } from "@/lib/sanity.client";
 import { readTime } from "@/app/utils/readTime";
 import PageHeading from "@/app/components/shared/PageHeading";
-type Props = {
-  params: { post: string }; // NOT Promise<{ post: string }>
-  searchParams?: { [key: string]: string | string[] | undefined };
-};
+
+type Params = Promise<{ post: string }>;
+type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 
 const fallbackImage: string =
   "https://res.cloudinary.com/victoreke/image/upload/v1692636087/victoreke/blog.png";
 
 // Dynamic metadata for SEO
-export async function generateMetadata({ params }: Props) {
+export async function generateMetadata(props: {
+  params: Params;
+  searchParams: SearchParams;
+}): Promise<Metadata> {
+  const params = await props.params;
   const slug = params.post;
   const post: PostType = await sanityFetch({
     query: singlePostQuery,
@@ -41,24 +44,23 @@ export async function generateMetadata({ params }: Props) {
 
   return {
     title: `${post.title}`,
-    metadataBase: new URL(`https://legendsumeet.vercel.app/blog/${post.slug}`),
+    metadataBase: new URL(`https://victoreke.com/blog/${post.slug}`),
     description: post.description,
     publisher: post.author.name,
     keywords: post.tags,
     alternates: {
       canonical:
-        post.canonicalLink ||
-        `https://legendsumeet.vercel.app/blog/${post.slug}`,
+        post.canonicalLink || `https://victoreke.com/blog/${post.slug}`,
     },
     openGraph: {
       images:
         urlFor(post.coverImage?.image).width(1200).height(630).url() ||
         fallbackImage,
-      url: `https://legendsumeet.vercel.app/blog/${post.slug}`,
+      url: `https://victoreke.com/blog/${post.slug}`,
       title: post.title,
       description: post.description,
       type: "article",
-      siteName: "legendsumeet.vercel.app",
+      siteName: "victoreke.com",
       authors: post.author.name,
       tags: post.tags,
       publishedTime: post._createdAt,
@@ -77,7 +79,11 @@ export async function generateMetadata({ params }: Props) {
   };
 }
 
-export default async function Post({ params }: Props) {
+export default async function Post(props: {
+  params: Params;
+  searchParams: SearchParams;
+}) {
+  const params = await props.params;
   const slug = params.post;
   const post: PostType = await sanityFetch({
     query: singlePostQuery,

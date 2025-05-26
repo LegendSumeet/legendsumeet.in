@@ -9,17 +9,18 @@ import { urlFor } from "@/lib/sanity.image";
 import { sanityFetch } from "@/lib/sanity.client";
 import { BiLinkExternal, BiLogoGithub } from "react-icons/bi";
 
-type Props = {
-  params: {
-    project: string;
-  };
-};
+type Params = Promise<{ project: string }>;
+type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 
 const fallbackImage: string =
   "https://res.cloudinary.com/victoreke/image/upload/v1692636087/victoreke/projects.png";
 
 // Dynamic metadata for SEO
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(props: {
+  params: Params;
+  searchParams: SearchParams;
+}): Promise<Metadata> {
+  const params = await props.params;
   const slug = params.project;
   const project: ProjectType = await sanityFetch({
     query: singleProjectQuery,
@@ -42,7 +43,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function Project({ params }: Props) {
+export default async function Project(props: {
+  params: Params;
+  searchParams: SearchParams;
+}) {
+  const params = await props.params;
   const slug = params.project;
   const project: ProjectType = await sanityFetch({
     query: singleProjectQuery,

@@ -1,4 +1,10 @@
 packages:
-  - "apps/*" # If your Next.js app is in an 'apps' folder
-  - "packages/*" # If you have other shared packages
-  - "." # Include the root package if it's also a package
+  - apps/*
+  - packages/*
+  - .
+
+ignoredBuiltDependencies:
+  - '@tailwindcss/oxide'
+  - esbuild
+  - sharp
+  - unrs-resolver
