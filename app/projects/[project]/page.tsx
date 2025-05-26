@@ -13,7 +13,7 @@ type Params = Promise<{ project: string }>;
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 
 const fallbackImage: string =
-  "https://res.cloudinary.com/victoreke/image/upload/v1692636087/victoreke/projects.png";
+  "https://pub-aeb4b56fc7304a9da5d176334162ca95.r2.dev/Black%20and%20Purple%20Modern%20Graphic%20Design%20Business%20Card/4.png";
 
 // Dynamic metadata for SEO
 export async function generateMetadata(props: {
@@ -30,13 +30,15 @@ export async function generateMetadata(props: {
 
   return {
     title: `${project.name} | Project`,
-    metadataBase: new URL(`https://victoreke.com/projects/${project.slug}`),
+    metadataBase: new URL(
+      `https://legendsumeet.vercel.app/projects/${project.slug}`,
+    ),
     description: project.tagline,
     openGraph: {
       images: project.coverImage
         ? urlFor(project.coverImage.image).width(1200).height(630).url()
         : fallbackImage,
-      url: `https://victoreke.com/projects/${project.slug}`,
+      url: `https://legendsumeet.vercel.app/projects/${project.slug}`,
       title: project.name,
       description: project.tagline,
     },

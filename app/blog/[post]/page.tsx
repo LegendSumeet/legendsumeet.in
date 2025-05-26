@@ -23,7 +23,7 @@ type Params = Promise<{ post: string }>;
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 
 const fallbackImage: string =
-  "https://res.cloudinary.com/victoreke/image/upload/v1692636087/victoreke/blog.png";
+  "https://pub-aeb4b56fc7304a9da5d176334162ca95.r2.dev/Black%20and%20Purple%20Modern%20Graphic%20Design%20Business%20Card/2.png";
 
 // Dynamic metadata for SEO
 export async function generateMetadata(props: {
@@ -44,23 +44,24 @@ export async function generateMetadata(props: {
 
   return {
     title: `${post.title}`,
-    metadataBase: new URL(`https://victoreke.com/blog/${post.slug}`),
+    metadataBase: new URL(`https://legendsumeet.vercel.app/blog/${post.slug}`),
     description: post.description,
     publisher: post.author.name,
     keywords: post.tags,
     alternates: {
       canonical:
-        post.canonicalLink || `https://victoreke.com/blog/${post.slug}`,
+        post.canonicalLink ||
+        `https://legendsumeet.vercel.app/blog/${post.slug}`,
     },
     openGraph: {
       images:
         urlFor(post.coverImage?.image).width(1200).height(630).url() ||
         fallbackImage,
-      url: `https://victoreke.com/blog/${post.slug}`,
+      url: `https://legendsumeet.vercel.app/blog/${post.slug}`,
       title: post.title,
       description: post.description,
       type: "article",
-      siteName: "victoreke.com",
+      siteName: "legendsumeet.vercel.app",
       authors: post.author.name,
       tags: post.tags,
       publishedTime: post._createdAt,
