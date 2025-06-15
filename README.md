@@ -17,12 +17,6 @@ This site showcases my work, projects, and technical background.
 
 ---
 
-## 📸 Preview
-
-![Portfolio Preview](./public/preview.png)
-
----
-
 ## 🛠 Features
 
 - Interactive and clean UI
