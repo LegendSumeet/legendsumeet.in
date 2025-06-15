@@ -8,6 +8,7 @@ import Navbar from "./components/global/Navbar";
 import Footer from "./components/global/Footer";
 import { Providers } from "./providers";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
@@ -55,6 +56,7 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Analytics />
+          <SpeedInsights />
           <Footer />
         </Providers>
       </body>
