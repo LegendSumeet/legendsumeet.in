@@ -60,7 +60,7 @@ export async function generateMetadata(props: {
       title: post.title,
       description: post.description,
       type: "article",
-      siteName: "legendsumeet.vercel.app",
+      siteName: "legendsumeet.in",
       authors: post.author.name,
       tags: post.tags,
       publishedTime: post._createdAt,

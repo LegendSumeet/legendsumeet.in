@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: options.title,
     url: options.url,
-    siteName: "legenedsumeet.vercel.app",
+    siteName: "legenedsumeet.in",
     locale: "en-US",
     type: "website",
     description: options.description,
@@ -60,11 +60,6 @@ export default function RootLayout({
           <Footer />
         </Providers>
       </body>
-      <Script
-        defer
-        src="https://cloud.umami.is/script.js"
-        data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
-      />
     </html>
   );
 }
