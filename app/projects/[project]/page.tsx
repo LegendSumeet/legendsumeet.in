@@ -30,15 +30,13 @@ export async function generateMetadata(props: {
 
   return {
     title: `${project.name} | Project`,
-    metadataBase: new URL(
-      `https://legendsumeet.vercel.app/projects/${project.slug}`,
-    ),
+    metadataBase: new URL(`https://legendsumeet.in/projects/${project.slug}`),
     description: project.tagline,
     openGraph: {
       images: project.coverImage
         ? urlFor(project.coverImage.image).width(1200).height(630).url()
         : fallbackImage,
-      url: `https://legendsumeet.vercel.app/projects/${project.slug}`,
+      url: `https://legendsumeet.in/projects/${project.slug}`,
       title: project.name,
       description: project.tagline,
     },

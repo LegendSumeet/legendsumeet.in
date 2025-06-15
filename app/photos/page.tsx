@@ -19,12 +19,12 @@ const images = [
 ];
 
 export const metadata: Metadata = {
-  title: "Photos | Victor Eke",
-  metadataBase: new URL("https://victoreke.com/photos"),
+  title: "Photos | LegendSumeet",
+  metadataBase: new URL("https://legendsumeet.in/photos"),
   description: "Explore photos taken by Victor Eke",
   openGraph: {
     title: "Photos | Victor Eke",
-    url: "https://victoreke.com/photos",
+    url: "https://legendsumeet.in/photos",
     description: "Explore photos taken by Victor Eke",
     images:
       "https://pub-aeb4b56fc7304a9da5d176334162ca95.r2.dev/Black%20and%20Purple%20Modern%20Graphic%20Design%20Business%20Card/3.png",

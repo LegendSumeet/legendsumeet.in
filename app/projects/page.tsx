@@ -10,11 +10,11 @@ import PageHeading from "../components/shared/PageHeading";
 
 export const metadata: Metadata = {
   title: "Project | Sumeet Vishwakarma",
-  metadataBase: new URL("https://legendsumeet.vercel.app/projects"),
+  metadataBase: new URL("https://legendsumeet.in/projects"),
   description: "Explore projects built by Sumeet Vishwakarma",
   openGraph: {
     title: "Projects | Sumeet Vishwakarma",
-    url: "https://legendsumeet.vercel.app/projects",
+    url: "https://legendsumeet.in/projects",
     description: "Explore projects built by Sumeet Vishwakarma",
     images:
       "https://pub-aeb4b56fc7304a9da5d176334162ca95.r2.dev/Black%20and%20Purple%20Modern%20Graphic%20Design%20Business%20Card/4.png",

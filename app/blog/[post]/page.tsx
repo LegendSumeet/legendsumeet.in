@@ -44,20 +44,19 @@ export async function generateMetadata(props: {
 
   return {
     title: `${post.title}`,
-    metadataBase: new URL(`https://legendsumeet.vercel.app/blog/${post.slug}`),
+    metadataBase: new URL(`https://legendsumeet.in/blog/${post.slug}`),
     description: post.description,
     publisher: post.author.name,
     keywords: post.tags,
     alternates: {
       canonical:
-        post.canonicalLink ||
-        `https://legendsumeet.vercel.app/blog/${post.slug}`,
+        post.canonicalLink || `https://legendsumeet.in/blog/${post.slug}`,
     },
     openGraph: {
       images:
         urlFor(post.coverImage?.image).width(1200).height(630).url() ||
         fallbackImage,
-      url: `https://legendsumeet.vercel.app/blog/${post.slug}`,
+      url: `https://legendsumeet.in/blog/${post.slug}`,
       title: post.title,
       description: post.description,
       type: "article",
