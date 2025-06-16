@@ -30,11 +30,10 @@ export const metadata: Metadata = {
   title: options.title,
   metadataBase: new URL(options.url),
   description: options.description,
-
   openGraph: {
     title: options.title,
     url: options.url,
-    siteName: "legenedsumeet.in",
+    siteName: "legendsumeet",
     locale: "en-US",
     type: "website",
     description: options.description,
