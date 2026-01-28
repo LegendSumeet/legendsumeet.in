@@ -7,8 +7,8 @@ import { table } from "@sanity/table";
 import { projectId, dataset } from "./lib/env.api";
 
 export default defineConfig({
-  name: "sumeet",
-  title: "sumeet.com",
+  name: "legendsumeetin-cms",
+  title: "legendsumeet.in CMS",
   basePath: "/studio",
   projectId,
   dataset,
