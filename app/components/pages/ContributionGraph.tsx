@@ -1,6 +1,6 @@
 "use client";
 import { useTheme } from "next-themes";
-import GitHubCalendar from "react-github-calendar";
+import { GitHubCalendar } from "react-github-calendar";
 import { github } from "@/app/data/contribution-graph-theme";
 import { useState, useEffect } from "react";
 import YearButton from "../shared/YearButton";
@@ -10,11 +10,11 @@ import { IoIosAnalytics } from "react-icons/io";
 
 export default function ContributionGraph() {
   const [calendarYear, setCalendarYear] = useState<number | undefined>(
-    undefined
+    undefined,
   );
   const { theme, systemTheme } = useTheme();
   const [serverTheme, setServerTheme] = useState<"light" | "dark" | undefined>(
-    undefined
+    undefined,
   );
   const scheme =
     theme === "light" ? "light" : theme === "dark" ? "dark" : systemTheme;
