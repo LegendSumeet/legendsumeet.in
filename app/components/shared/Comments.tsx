@@ -16,12 +16,11 @@ export default function Comments() {
   return (
     <Giscus
       id="comments"
-      repo="evavic44/legendsumeet"
-      repoId={giscusRepoId}
-      category="Announcements"
-      categoryId={giscusCategoryId}
-      mapping="title"
-      term="Welcome to @giscus/react component!"
+      repo="LegendSumeet/Portfolio"
+      repoId={process.env.NEXT_PUBLIC_GISCUS_REPOID!}
+      category="General"
+      categoryId={process.env.NEXT_PUBLIC_GISCUS_CATEGORYID!}
+      mapping="pathname"
       reactionsEnabled="1"
       emitMetadata="0"
       inputPosition="bottom"

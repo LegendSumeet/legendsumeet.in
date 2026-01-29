@@ -26,11 +26,11 @@ export default async function Job() {
 
       {jobs.length > 0 ? (
         <Slide delay={0.18}>
-          <div className="grid lg:grid-cols-2 grid-cols-1 gap-x-12 gap-y-10">
+          <div className="flex flex-col gap-y-10">
             {jobs.map((job) => (
               <div
                 key={job._id}
-                className="flex items-start lg:gap-x-6 gap-x-4 max-w-2xl relative before:absolute before:bottom-0 before:top-[5rem] before:left-9 before:w-[1px] before:h-[calc(100%-70px)] dark:before:bg-zinc-800 before:bg-zinc-200"
+                className="flex items-start lg:gap-x-6 gap-x-4 relative before:absolute before:bottom-0 before:top-[5rem] before:left-9 before:w-[1px] before:h-[calc(100%-70px)] dark:before:bg-zinc-800 before:bg-zinc-200"
               >
                 <RefLink
                   href={job.url}
@@ -44,11 +44,12 @@ export default async function Job() {
                     height={50}
                   />
                 </RefLink>
+
                 <div className="flex flex-col items-start">
                   <h3 className="text-xl font-semibold">{job.name}</h3>
                   <p>{job.jobTitle}</p>
                   <time className="text-sm text-zinc-500 mt-2 tracking-widest uppercase">
-                    {formatDate(job.startDate)} -{" "}
+                    {formatDate(job.startDate)} –{" "}
                     {job.endDate ? (
                       formatDate(job.endDate)
                     ) : (
